@@ -115,3 +115,10 @@ def imputa_edad_media_segun_sexo(df):
     df['Edad'] = df.apply(lambda row: promedio_por_genero[row['Sexo']] if pd.isna(row['Edad']) else row['Edad'], axis=1)
     # Lo convierte a entero
     df['Edad'] = df['Edad'].astype(int)
+    
+# Clasificar por semestre
+def clasificar_semestre(mes):
+    if mes <= 6:
+        return 1
+    else:
+        return 2
